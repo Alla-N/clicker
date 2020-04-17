@@ -1,11 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'clicker';
-  name = 'Alla';
+export class AppComponent  implements OnInit{
+  name = '';
+  isStart = false;
+  isEnd = false;
+
+  timeLeft = 10;
+  interval;
+  counter = 0;
+
+  message: string;
+
+  startTimer() {
+    this.isStart = true;
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.stopTimer();
+      }
+    }, 1000);
+  }
+
+  game() {
+    this.counter++;
+  }
+
+  stopTimer() {
+    clearInterval(this.interval);
+    this.isEnd = true;
+  }
+  ngOnInit() {
+    this.name = prompt('Hi! What is your name?');
+  }
 }
