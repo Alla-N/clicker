@@ -3,22 +3,33 @@
     Hello, {{name}}
   </h1>
   <div class="game">
-    <button (click)="startTimer()"  class="game_button" *ngIf="!isStart && !isEnd">
-      Click to start
-    </button>
+    <div class="game_start"  *ngIf="!isStart && !isEnd">
+      <div class="game_settings">
+        <label>
+          <input type="number" min="5" max="120" [(ngModel)]="timer" >
+          Choose the time of the game (5 - 120 seconds)
+        </label>
+      </div>
+      <button (click)="startTimer()"  class="game_button">
+        Click to start
+      </button>
+    </div>
 
-    <button (click)="game()"  class="game_button game" *ngIf="isStart && !isEnd">
-      Click me!!!
-    </button>
-
-    <p class="game_timer" *ngIf="!isEnd">
-      Time left: {{timeLeft}}
-      <br>
-      Total clicks: {{counter}}
-    </p>
-    <p class="game_result" [style.display]="isEnd ? 'block' : 'none'">
-      {{name}}, your result is {{counter}} for 10 seconds
-    </p>
-
+    <div class="game_progress"  *ngIf="isStart && !isEnd">
+      <button (click)="game()"  class="game_button game">
+        Click me!!!
+      </button>
+      <p class="game_timer" *ngIf="!isEnd">
+        Time left: {{timeLeft}}
+        <br>
+        Total clicks: {{counter}}
+      </p>
+    </div>
+    <div class="game_result" [style.display]="isEnd ? 'block' : 'none'">
+      <p class="game_message">{{name}}, your result is {{counter}} clicks for {{timer}} seconds</p>
+      <button (click)="refresh()"  class="game_restart">
+        Try again !
+      </button>
+    </div>
   </div>
 </div>

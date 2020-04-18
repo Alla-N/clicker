@@ -9,8 +9,8 @@ export class AppComponent  implements OnInit{
   name = '';
   isStart = false;
   isEnd = false;
-
-  timeLeft = 10;
+  timer = 10;
+  timeLeft: number;
   interval;
   counter = 0;
 
@@ -18,6 +18,7 @@ export class AppComponent  implements OnInit{
 
   startTimer() {
     this.isStart = true;
+    this.timeLeft = this.timer;
     this.interval = setInterval(() => {
       if (this.timeLeft > 0) {
         this.timeLeft--;
@@ -30,12 +31,16 @@ export class AppComponent  implements OnInit{
   game() {
     this.counter++;
   }
-
   stopTimer() {
     clearInterval(this.interval);
     this.isEnd = true;
   }
+  refresh() {
+    this.isStart = false;
+    this.isEnd = false;
+  }
   ngOnInit() {
     this.name = prompt('Hi! What is your name?');
   }
+
 }
