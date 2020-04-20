@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent  implements OnInit{
   name = '';
-  isStart = false;
+  min = 5;
+  max = 120;
+  initial = true;
+  inProgress = false;
   isEnd = false;
   timer = 10;
   timeLeft: number;
@@ -17,7 +20,8 @@ export class AppComponent  implements OnInit{
   message: string;
 
   startTimer() {
-    this.isStart = true;
+    this.initial = false;
+    this.inProgress = true;
     this.timeLeft = this.timer;
     this.interval = setInterval(() => {
       if (this.timeLeft > 0) {
@@ -33,11 +37,13 @@ export class AppComponent  implements OnInit{
   }
   stopTimer() {
     clearInterval(this.interval);
+    this.inProgress = false;
     this.isEnd = true;
   }
   refresh() {
-    this.isStart = false;
+    this.initial = true;
     this.isEnd = false;
+    this.counter = 0;
   }
   ngOnInit() {
     this.name = prompt('Hi! What is your name?');
