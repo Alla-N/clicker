@@ -17,5 +17,5 @@ deploy:
   provider: heroku
   app: alla-clicker
   api_key:
-    secure: "f01fbdf5-df23-438d-add7-1eb76f560142"
+    secure: "01d2da93-4001-4fbb-b2d5-6b34028a1184"
 
