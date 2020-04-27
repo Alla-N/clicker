@@ -4,10 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StartComponent } from './start/start.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { MainComponent } from './main/main.component';
+import { GameComponent } from './game/game.component';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StartComponent,
+    NotfoundComponent,
+    MainComponent,
+    GameComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

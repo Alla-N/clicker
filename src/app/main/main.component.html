@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="main">
+    <h1 class="main_title">
+      Hello, please introduce yourself
+    </h1>
+    <div class="main_name">
+      <input
+        placeholder="Jon"
+        type="text"
+        required="required"
+        class="main_input"
+        [(ngModel)] = "name"
+      >
+    </div>
+    <p *ngIf="!name" class="main_warning"> Name is required! </p>
+    <div  class="main_start">
+      <button
+        (click)="start()"
+        class="main_link"
+        *ngIf="name">
+        Start
+      </button>
+    </div>
+  </div>
+</div>

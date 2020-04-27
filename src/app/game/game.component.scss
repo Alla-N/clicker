@@ -1,0 +1,72 @@
+.container {
+  min-width: 300px;
+  min-height: 98vh;
+  padding: 3rem 1rem;
+  text-align: center;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
+  .game {
+    padding: .5rem 1rem;
+    max-width: 1200px;
+    min-width: 300px;
+
+    &_settings {
+      padding: 20px;
+      font-size: 25px;
+      height: 80px;
+      box-sizing: border-box;
+    }
+
+    &_input {
+      background: transparent;
+      box-sizing: border-box;
+      height: 100%;
+      outline: none;
+      text-align: center;
+      padding: 5px 10px;
+
+      &:not(:valid) {
+        border: 2px solid red;
+      }
+
+      &:valid {
+        border: 2px solid green;
+      }
+    }
+
+    &_warning {
+      color: red;
+    }
+
+    &_button {
+      max-width: 300px;
+      width: 100%;
+      min-height: 300px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      font-family: 'Indie Flower', cursive;
+      font-size: 30px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        box-shadow: 0 0 15px 5px grey;
+      }
+
+      &:disabled {
+        background-color: dimgrey;
+        color: black;
+      }
+    }
+
+    &_timer {
+      font-size:  35px;
+      margin: 20px auto;
+    }
+  }
+
+}

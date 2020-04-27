@@ -1,0 +1,16 @@
+<div class="container">
+<div class="game">
+  <div class="game_result">
+    <p class="game_message">{{user.userName}}, your result is {{user.gameResult}} clicks for {{user.gameTime}} seconds</p>
+    <button (click)="restart()"  class="game_button">
+      Try again !
+    </button>
+    <button (click)="exit()"  class="game_button">
+      Exit
+    </button>
+    <button class="game_button">
+      Show my rating
+    </button>
+  </div>
+</div>
+</div>

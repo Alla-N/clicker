@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="game">
+    <div class="game_settings">
+      <input
+        type="number"
+        [min]="min"
+        [max]="max"
+        [(ngModel)]="timer"
+        required="required"
+        class="game_input"
+        id="timer"
+      >
+      <label for="timer">
+        Choose the time of the game ({{min}} - {{max}} seconds)
+      </label>
+    </div>
+    <p *ngIf="!timer" class="game_warning">Choose time!</p>
+    <button (click)="startGame()" class="game_button" [disabled]="!timer">
+      Click to start
+    </button>
+    <button (click)="exit()"  class="game_button">
+      Exit
+    </button>
+  </div>
+</div>
+
